@@ -155,6 +155,7 @@ def delete_drink(payload, id):
     try:
         drink = Drink.query.filter_by(id=id).one_or_none()
         if drink is None:
+            print("no drink")
             abort(404)
 
         drink.delete()
